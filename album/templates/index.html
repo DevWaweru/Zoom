@@ -6,17 +6,52 @@
     <div class="row">
         <div class="col-md-12 home-images">
             {% for img in images %}
-            <div class="img-holder">
-                <div class="image-details">
-                    <a href=""><i class="fa fa-link" aria-hidden="true"></i></a>
-                    <p>{{img.name}}</p>
+                <div class="img-holder">
+                    <div class="image-details darken">
+                        <p class="text-center"><a href="" class="tooltip-test" title="Copy link"><i class="fa fa-link fa-2x" aria-hidden="true"></i></a></p>
+                        <p class="text-center"><a data-toggle="modal" data-target="#{{img.id}}">{{img.name}}</a></p>
+                    </div>
+                    <img src="{{img.image.url}}" alt="{{img.name}}">
                 </div>
-                <img src="{{img.image.url}}" alt="">
-            </div>
             {% empty %}
                 <p>No images found</p>
             {% endfor %}
         </div>
     </div>
 </div>
+
+{% for img in images %}
+<div class="modal fade bd-example-modal-lg" id="{{img.id}}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modal-title"> {{img.name}} </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true"><i class="fa fa-times" aria-hidden="true"></i></span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12 modal-image">
+                        <img src="{{img.image.url}}" alt="{{img.name}}">
+                    </div>
+                    <div class="col-md-12">
+                        {{img.description}}
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <ul class="list-inline">
+                    <li class="list-inline-item">
+                        <a class="twitter-share-button" class="tooltip-test" title="Share on Twitter"
+                            href="https://twitter.com/intent/tweet?text={{img.image.url}}" target="_blank">
+                            <i class="fa fa-twitter fa-2x"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
 {% endblock %}

@@ -8,3 +8,8 @@ def index(request):
     images = Image.get_all_images()
     print(images)
     return render(request, 'index.html', {'title':title, 'images':images})
+
+def single_image(request, image_id):
+    title = f'{image_id}'
+
+    return render(request,'single_image.html',{'title':title})
