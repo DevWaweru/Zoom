@@ -44,6 +44,11 @@ class Image(models.Model):
         self.delete()
     
     @classmethod
+    def get_all_images(self):
+        all_images = Image.objects.all()
+        return all_images
+    
+    @classmethod
     def get_image_by_id(self, id):
         an_image = Image.objects.get(id=id)
         return an_image
