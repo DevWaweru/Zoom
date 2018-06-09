@@ -44,21 +44,21 @@ class Image(models.Model):
         self.delete()
     
     @classmethod
-    def get_all_images(self):
+    def get_all_images(cls):
         all_images = Image.objects.all()
         return all_images
     
     @classmethod
-    def get_image_by_id(self, id):
+    def get_image_by_id(cls, id):
         an_image = Image.objects.get(id=id)
         return an_image
     
     @classmethod
-    def search_image(self,search_category):
+    def search_image(cls,search_category):
         images_category = Image.objects.filter(category__icontains=search_category)
         return images_category
 
     @classmethod
-    def filter_by_location(self, filter_location):
+    def filter_by_location(cls, filter_location):
         images_location = Image.objects.filter(location=filter_location)
         return images_location   
