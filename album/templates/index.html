@@ -33,7 +33,9 @@
             <div class="modal-body">
                 <div class="row">
                     <div class="col-md-12 modal-image">
-                        <img src="{{img.image.url}}" alt="{{img.name}}">
+                        <a href="/image/{{img.catergory.photo_category}}/{{img.id}}">
+                            <img src="{{img.image.url}}" alt="{{img.name}}">
+                        </a>
                     </div>
                     <div class="col-md-12">
                         {{img.description}}
