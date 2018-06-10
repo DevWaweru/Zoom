@@ -10,11 +10,29 @@ def index(request):
     return render(request, 'index.html', {'title':title, 'images':images, 'locations':locations})
 
 def single_image(request, category_name, image_id):
-    title = f'{image_id}'
     # print(image_category)
+    locations = Location.objects.all()
 
     image = Image.get_image_by_id(image_id)
     # Get category name
     print(category_name)
     image_category = Image.objects.filter(catergory__photo_category = category_name)
-    return render(request,'single_image.html',{'title':title, 'image':image, 'image_category':image_category})
+    title = f'{category_name}'
+    return render(request,'single_image.html',{'title':title, 'image':image, 'image_category':image_category, 'locations':locations})
+
+def location_filter(request, location):
+    locations = Location.objects.all()
+    images = Image.filter_by_location(location)
+    title = f'{location} Photos'
+    return render(request, 'location.html', {'title':title, 'images':images, 'locations':locations})
+
+def search(request):
+    if 'article' in request.GET and request.GET['article']:
+        search_term = request.GET.get('article')
+        searched_articles = Article.search_by_title(search_term)
+        message = (f'{search_term}')
+
+        return render(request, 'all-news/search.html',{'message':message, 'articles':searched_articles})
+    else:
+        message = "You haven't searched for any term"
+        return render(request, 'all-news/search.html',{'message':message})

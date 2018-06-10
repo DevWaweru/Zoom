@@ -8,7 +8,7 @@
     <div class="locations">
         <h4>Locations</h4>
         {% for location in locations %}
-        <a href="">{{location.photo_location}}</a>
+        <a href="/location/{{location.photo_location}}">{{location.photo_location}}</a>
         {% empty %}
         <h4>There are no locations</h4>
         {% endfor %}

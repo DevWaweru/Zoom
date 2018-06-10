@@ -73,7 +73,7 @@ body{
 }
 .image-details{
     position: absolute;
-    height: 28%;
+    height: inherit;
     width: 29.5%;
     z-index: 2;
     padding-top: 5%;
@@ -115,6 +115,9 @@ body{
 .modal-footer{
     justify-content: center;
     border-top: 0;
+}
+.img-location{
+    height:80%;
 }
 @media (min-width: 992px){
     .modal-lg {
