@@ -35,7 +35,7 @@ class Image(models.Model):
     description = models.TextField()
     post_date = models.DateTimeField(auto_now_add=True)
     location = models.ForeignKey(Location)
-    catergory = models.ForeignKey(Category)
+    category = models.ForeignKey(Category)
 
     def save_image(self):
         self.save()
@@ -55,7 +55,7 @@ class Image(models.Model):
     
     @classmethod
     def search_image(cls,search_category):
-        images_category = Image.objects.filter(category__icontains=search_category)
+        images_category = Image.objects.filter(category__photo_category__icontains=search_category)
         return images_category
 
     @classmethod

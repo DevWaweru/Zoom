@@ -16,7 +16,7 @@ def single_image(request, category_name, image_id):
     image = Image.get_image_by_id(image_id)
     # Get category name
     print(category_name)
-    image_category = Image.objects.filter(catergory__photo_category = category_name)
+    image_category = Image.objects.filter(category__photo_category = category_name)
     title = f'{category_name}'
     return render(request,'single_image.html',{'title':title, 'image':image, 'image_category':image_category, 'locations':locations})
 
@@ -27,12 +27,12 @@ def location_filter(request, location):
     return render(request, 'location.html', {'title':title, 'images':images, 'locations':locations})
 
 def search(request):
-    if 'article' in request.GET and request.GET['article']:
-        search_term = request.GET.get('article')
-        searched_articles = Article.search_by_title(search_term)
+    if 'category' in request.GET and request.GET['category']:
+        search_term = request.GET.get('category')
+        images_found = Image.search_image(search_term)
         message = (f'{search_term}')
 
-        return render(request, 'all-news/search.html',{'message':message, 'articles':searched_articles})
+        return render(request, 'search.html',{'message':message, 'images':images_found})
     else:
         message = "You haven't searched for any term"
-        return render(request, 'all-news/search.html',{'message':message})
+        return render(request, 'search.html',{'message':message})
