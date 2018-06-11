@@ -1,13 +1,36 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1> {{image.name}} </h1>
-<p> {{image.catergory.photo_category}} </p>
-<hr>
-<!-- <h2>Show other photos based on categories</h2> -->
-{% for img in image_category %}
-<h2> {{img.name}} </h2>
-{% empty %}
-<h3>No images in this category</h3>
-{% endfor %}
+<div class="container display-image">
+    <div class="row">
+        <div class="col-md-12 single-image">
+            <img src="{{image.image.url}}" alt="{{image.name}}">
+        </div>
+        <div class="col-md-12 single-text">
+            <h3> {{image.name}} </h3>
+            <p> {{image.description}} </p>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-md-12">
+            <h5>Images in this category:</h5>
+            <div class="container">
+                {% for img in image_category %}
+                <div class="row">
+                    <div class="col-md-8 category-images">
+                        <img src="{{img.image.url}}" alt="{{img.name}}">
+                    </div>
+                    <div class="col-md-4 category-text">
+                        <h4>{{img.name}}</h4>
+                    </div>
+                </div>
+                <hr>
+                {% empty %}
+                <h3>No images in this category</h3>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
