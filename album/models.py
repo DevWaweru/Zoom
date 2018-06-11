@@ -10,6 +10,11 @@ class Location(models.Model):
     
     def delete_location(self):
         self.delete()
+    
+    @classmethod
+    def update_location(cls,id, updates):
+        updated = Location.objects.filter(pk=id).update(photo_location=updates)
+        return updated
 
     def __str__(self):
         return self.photo_location
@@ -22,9 +27,11 @@ class Category(models.Model):
 
     def delete_category(self):
         self.delete()
-
-    def update_category(self):
-        self.update
+    
+    @classmethod
+    def update_category(cls, id, updates):
+        updated = Category.objects.filter(pk=id).update(photo_category=updates)
+        return updated
 
     def __str__(self):
         return self.photo_category
