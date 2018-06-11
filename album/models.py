@@ -51,7 +51,7 @@ class Image(models.Model):
         self.delete()
     
     def __str__(self):
-        return name
+        return self.name
     
     @classmethod
     def get_all_images(cls):
