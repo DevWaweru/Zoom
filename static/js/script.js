@@ -11,13 +11,13 @@ $(document).ready(function(){
     navbarCollapse();
     // Collapse the navbar when there is scroll activity
     $(window).scroll(navbarCollapse);
-    
+
     $('.close-nav').click(function(){
         document.getElementById("sideNav").style.width = "0";
     })
 
     $('.open-nav').click(function(){
-        document.getElementById('sideNav').style.width = "250px";
+        document.getElementById('sideNav').style.width = "290px";
     })
 
     $('.tool-tip').click(function(){

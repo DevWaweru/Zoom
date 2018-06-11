@@ -3,7 +3,7 @@
     <a href="#">About</a>
     <hr>
     <div class="locations">
-        <h4>Locations</h4>
+        <h4>Locations:</h4>
         {% for location in locations %}
         <a href="/location/{{location.photo_location}}">{{location.photo_location}}</a>
         {% empty %}
@@ -12,7 +12,39 @@
     </div>
 
     <div class="footer">
-        <p>Facebook</p>
+        <div class="row">
+            <div class="col-md-12 social-buttons">
+                <ul class="list-inline">
+                    <li class="list-inline-item">
+                        <a 
+                            href="https://twitter.com/richywaweru" target="_blank">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="tooltip-test" title="follow me"
+                            href="https://twitter.com/richywaweru" target="_blank">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="tooltip-test" title="follow me"
+                            href="https://twitter.com/richywaweru" target="_blank">
+                            <i class="fa fa-instagram"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="tooltip-test" title="follow me"
+                            href="https://twitter.com/richywaweru" target="_blank">
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-12">
+                <p>Copyright &copy; 2018 All Rights Reserved</p>
+            </div>
+        </div>
     </div>
 </div>
 
