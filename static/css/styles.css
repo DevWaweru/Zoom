@@ -51,7 +51,7 @@ body{
     padding: 1px;
 }
 .footer p{
-    color: white;
+    color: #818181;
     font-size: 14px;
     display: flex;
     justify-content: center;
@@ -130,7 +130,7 @@ body{
     width: 15rem;
     border: 0;
     border-radius: 0;
-    background-color: #40404154;
+    background-color: #40404121;
     color: white;
     -webkit-transition: all 0.5s ease-in-out;
     -moz-transition: all 0.5s ease-in-out;
