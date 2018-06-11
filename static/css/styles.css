@@ -66,6 +66,7 @@ body{
   .nav-side {padding-top: 15px;}
   .nav-side a {font-size: 18px;}
 }
+
 #navMain {
     font-family: 'Questrial';
     font-size: 20px;
@@ -89,7 +90,6 @@ body{
     outline: none;
     background-color: rgb(240, 120, 120);
 }
-
 @media (min-width: 992px) {
     #navMain {
         padding-top: 20px;
