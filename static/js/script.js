@@ -1,17 +1,24 @@
-function openNav() {
-    document.getElementById("mySidenav").style.width = "20%";
-}
-
-function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-}
 $(document).ready(function(){
-    // $('.image-details').mouseenter(function(){
-    //     $('.image-details').addClass('darken')
-    // })
-    // $('.image-details').mouseleave(function(){
-    //     $('.image-details').removeClass('darken')
-    // })
+    // Collapse Navbar when the scroll is triggered
+    var navbarCollapse = function () {
+        if ($("#navMain").offset().top > 100) {
+            $("#navMain").addClass("navbar-shrink");
+        } else {
+            $("#navMain").removeClass("navbar-shrink");
+        }
+    };
+    // Collapse the nav bar if page is not at the top
+    navbarCollapse();
+    // Collapse the navbar when there is scroll activity
+    $(window).scroll(navbarCollapse);
+    
+    $('.close-nav').click(function(){
+        document.getElementById("sideNav").style.width = "0";
+    })
+
+    $('.open-nav').click(function(){
+        document.getElementById('sideNav').style.width = "250px";
+    })
 
     $('.tool-tip').click(function(){
         copyURL = document.getElementById('img-copy')
@@ -21,6 +28,7 @@ $(document).ready(function(){
         toolTip = document.getElementById('tip');
         toolTip.innerHTML = 'Copied!'
     })
+
     $('.tool-tip').mouseleave(function(){
         toolTip = document.getElementById('tip')
         toolTip.innerHTML = 'Copy Link'

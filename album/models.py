@@ -13,7 +13,7 @@ class Location(models.Model):
     
     @classmethod
     def update_location(cls,id, updates):
-        updated = Location.objects.filter(pk=id).update(photo_location=updates)
+        updated = Location.objects.filter(id=id).update(photo_location=updates)
         return updated
 
     def __str__(self):
