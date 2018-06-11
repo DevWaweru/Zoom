@@ -83,6 +83,10 @@ body{
 }
 .image-details, .image-details a{
     color: transparent;
+    border: rgba(0, 0, 0, 0);
+}
+.image-details .btn-outline-danger:hover{
+    background: white;
 }
 .image-details:hover{
     cursor: pointer;
@@ -93,6 +97,10 @@ body{
 }
 .image-details:hover a{
     color: white;    
+}
+
+.btn-outline-danger:hover i{
+    color: rgb(141, 11, 11);    
 }
 .modal-content{
     color: white;
@@ -124,4 +132,43 @@ body{
         max-width: 90%;
         height: 90%;
     }
+}
+
+/* tooltip style */
+.tool-tip {
+    position: relative;
+    display: inline-block;
+}
+
+.tool-tip .tip-text {
+    visibility: hidden;
+    width: 90px;
+    background-color: rgb(0, 0, 0);
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 120%;
+    left: 100%;
+    margin-left: -75px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tool-tip .tip-text::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgb(0, 0, 0) transparent transparent transparent;
+}
+
+.tool-tip:hover .tip-text {
+    visibility: visible;
+    opacity: 1;
 }
