@@ -1,9 +1,10 @@
-body{
+body {
     color: black;
     font-family: 'Cambay'
 }
 
 /* Naviagtion panel */
+
 .nav-side {
     height: 100%;
     width: 0;
@@ -26,9 +27,10 @@ body{
     transition: 0.3s;
     font-family: 'Questrial';
 }
-.nav-side h4{
+
+.nav-side h4 {
     color: rgb(7, 209, 158);
-    padding: 0px 0px 0px 20px; 
+    padding: 0px 0px 0px 20px;
 }
 
 .nav-side a:hover {
@@ -43,31 +45,39 @@ body{
     margin-left: 50px;
 }
 
-.footer{
+.footer {
     position: absolute;
     bottom: 0;
     width: 100%;
 }
-.footer a{
+
+.footer a {
     padding: 1px;
 }
-.footer p{
+
+.footer p {
     color: #818181;
     font-size: 14px;
     display: flex;
     justify-content: center;
 }
-.social-buttons{
+
+.social-buttons {
     display: flex;
     justify-content: center;
 }
-.social-buttons a:hover{
+
+.social-buttons a:hover {
     color: rgb(7, 209, 158);
 }
 
 @media screen and (max-height: 450px) {
-  .nav-side {padding-top: 15px;}
-  .nav-side a {font-size: 18px;}
+    .nav-side {
+        padding-top: 15px;
+    }
+    .nav-side a {
+        font-size: 18px;
+    }
 }
 
 #navMain {
@@ -93,6 +103,7 @@ body{
     outline: none;
     background-color: rgb(240, 120, 120);
 }
+
 @media (min-width: 992px) {
     #navMain {
         padding-top: 20px;
@@ -118,21 +129,23 @@ body{
         background: #222;
         border-bottom: 1px solid red;
     }
-    #navMain.navbar-shrink a{
+    #navMain.navbar-shrink a {
         color: rgba(16, 230, 184, 0.973);
     }
 }
 
 /* Search section */
 
-.search-section{
+.search-section {
     padding-top: 6rem;
 }
-.search-form form{
+
+.search-form form {
     display: flex;
     justify-content: center;
 }
-.search-input{
+
+.search-input {
     width: 15rem;
     border: 0;
     border-radius: 0;
@@ -142,10 +155,12 @@ body{
     -moz-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
 }
-.search-input:hover{
+
+.search-input:hover {
     border-bottom: 1px solid black;
 }
-.search-input:focus{
+
+.search-input:focus {
     transform: scaleX(1.1);
     border: 0 transparent;
     border-bottom: 1px black;
@@ -155,7 +170,8 @@ body{
 }
 
 /* Displaying images */
-.img-holder img{
+
+.img-holder img {
     width: 100%;
     -webkit-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
@@ -163,13 +179,15 @@ body{
     -ms-transform: scale(1);
     transform: scale(1);
 }
-.img-holder{
+
+.img-holder {
     height: 100%;
     padding: 0;
     overflow: hidden;
     box-shadow: 2px 4px 12px 2px #dcdcdc;
 }
-.img-holder:hover img{
+
+.img-holder:hover img {
     cursor: pointer;
     -webkit-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
@@ -178,7 +196,8 @@ body{
     transform: scale(1.1);
     z-index: 1;
 }
-.image-details{
+
+.image-details {
     position: absolute;
     height: inherit;
     width: 100%;
@@ -189,23 +208,29 @@ body{
     -webkit-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
 }
-.image-details, .image-details a{
+
+.image-details,
+.image-details a {
     color: transparent;
     border: rgba(0, 0, 0, 0);
 }
-.image-details .btn-outline-danger:hover{
+
+.image-details .btn-outline-danger:hover {
     background: white;
 }
-.image-details:hover{
+
+.image-details:hover {
     cursor: pointer;
     color: white;
     background-color: rgba(0, 0, 0, 0.507);
     -webkit-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
 }
-.image-details:hover a{
-    color: white;    
+
+.image-details:hover a {
+    color: white;
 }
+
 /* @media (max-width: 945px){
     .img-holder{
         width: 40%;
@@ -224,59 +249,84 @@ body{
         height: 15%
     }
 } */
-.btn-outline-danger:hover i{
-    color: rgb(141, 11, 11);    
+
+.btn-outline-danger:hover i {
+    color: rgb(141, 11, 11);
 }
 
 /* picture modal */
-.modal-content{
+
+.modal-content {
     color: white;
     height: 100%;
     background-color: rgba(255, 255, 255, 0.925);
     padding: 0;
 }
-.modal-header{
+
+.modal-header {
     border-bottom: 1px solid #2d2e2f;
 }
 
-.modal-header i{
+.modal-header i {
     color: white;
 }
-.modal-body{
+
+.modal-body {
     float: left;
     padding: 0;
 }
-.modal-image{
+
+.modal-image {
     max-height: 629.73px;
     overflow: hidden;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
 }
-.modal-text{
+
+.modal-text {
     padding: 2rem 5rem;
     color: black;
 }
-.modal-image img, .single-image img, .category-images img{
+
+.modal-image img,
+.single-image img,
+.category-images img {
     width: 100%;
 }
-.single-image{
+.modal-image:hover {
+    opacity: 0.75;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+.single-image {
     padding: 0;
 }
-.category-images{
+
+.category-images {
     padding: 1rem 0rem;
 }
-.category-text, .error-text{
+
+.category-text,
+.error-text {
     display: flex;
     align-items: center;
 }
-.single-text{
+
+.single-text {
     padding: 1rem;
 }
-.display-image{
+
+.display-image {
     box-shadow: 2px 4px 12px 2px #dcdcdc;
 }
-.img-location{
-    height:80%;
+
+.img-location {
+    height: 80%;
 }
-@media (min-width: 992px){
+
+@media (min-width: 992px) {
     .modal-lg {
         max-width: 70%;
         height: 90%;
@@ -284,6 +334,7 @@ body{
 }
 
 /* tooltip style */
+
 .tool-tip {
     position: relative;
     display: inline-block;

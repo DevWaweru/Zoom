@@ -38,7 +38,7 @@ class Category(models.Model):
 
 class Image(models.Model):
     image = models.ImageField(upload_to = 'museum-Images/',default='Image')
-    image_url = models.CharField(max_length=200,default='https://auto.ferrari.com/en_EN/wp-content/uploads/sites/5/2014/06/ferrari-458-speciale-header-v4.jpg')
+    image_url = models.CharField(max_length=200, default='https://auto.ferrari.com/en_EN/wp-content/uploads/sites/5/2014/06/ferrari-458-speciale-header-v4.jpg')
     name = models.CharField(max_length=30)
     description = models.TextField()
     post_date = models.DateTimeField(auto_now_add=True)
