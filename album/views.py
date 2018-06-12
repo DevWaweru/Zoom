@@ -31,7 +31,7 @@ def search(request):
     if 'category' in request.GET and request.GET['category']:
         search_term = request.GET.get('category')
         images_found = Image.search_image(search_term)
-        message = (f'{search_term}')
+        message = f'{search_term}'
 
         return render(request, 'search.html',{'message':message, 'images':images_found, 'locations':locations})
     else:

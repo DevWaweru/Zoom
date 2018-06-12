@@ -44,11 +44,13 @@
                         <h5 class="modal-title" id="modal-title"> {{img.name}} </h5>
                         <hr>
                         <p>{{img.description}}</p>
+                        <p class="small">Posted <span class="font-weight-bold">{{img.post_date|timesince}}</span> ago </p>
+                        <p class="small">Category <a href="">{{img.category.photo_category}}</a></p>
                         <ul class="list-inline">
-                            <li class="list-inline-item">
+                            <li class="list-inline-item"> Share
                                 <a class="twitter-share-button" class="tooltip-test" title="Share on Twitter"
                                     href="https://twitter.com/intent/tweet?text={{img.image.url}}" target="_blank">
-                                    <i class="fa fa-twitter fa-2x"></i>
+                                    <i class="fa fa-twitter fa-1x"></i>
                                 </a>
                             </li>
                         </ul>

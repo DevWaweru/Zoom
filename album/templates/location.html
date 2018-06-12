@@ -6,25 +6,26 @@
     <div class="row">
         <div class="col-md-12 home-images">
             {% for img in images %}
+            <p id="img-copy"></p>
             <div class="col-md-4 img-holder">
-                <div class="image-details darken">
-                        <p class="text-center"><a class="btn btn-outline-danger tool-tip"><span class="tip-text" id="tip">Copy Link</span><i class="fa fa-link fa-2x" aria-hidden="true"></i></a></p>
-                        <p class="text-center"><a data-toggle="modal" data-target="#{{img.id}}">{{img.name}}</a></p>
+                <div class="image-details">
+                    <p class="text-center"><a class="btn btn-outline-danger tool-tip"><span class="tip-text" id="tip">Copy Link</span><i class="fa fa-link fa-2x" aria-hidden="true"></i></a></p>
+                    <p class="text-center"><a data-toggle="modal" data-target="#{{img.id}}">{{img.name}}</a></p>
                 </div>
                 <img src="{{img.image_url}}" alt="{{img.name}}">
             </div>
-        {% empty %}
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <img src="/static/img/404.jpeg" alt="Loading Image">
-                </div>
-                <div class="col-md-6">
-                    <h4>Awww...Don’t Cry.</h4>
-                    <p>Images are coming up soon</p>
+            {% empty %}
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="/static/img/404.jpeg" alt="Loading Image">
+                    </div>
+                    <div class="col-md-6">
+                        <h4>Awww...Don’t Cry.</h4>
+                        <p>Images are coming up soon</p>
+                    </div>
                 </div>
             </div>
-        </div>
             {% endfor %}
         </div>
     </div>
