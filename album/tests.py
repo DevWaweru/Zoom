@@ -16,8 +16,8 @@ class LocationTestClass(TestCase):
     
     def test_updating_location(self):
         self.nairobi.update_location(self.nairobi.id, 'Kitengela')
-        # print(self.nairobi.photo_location)
-        self.assertTrue(self.nairobi.photo_location != 'Kitengela')
+        print(self.nairobi.photo_location)
+        self.assertTrue(self.nairobi.photo_location == self.nairobi)
     
 class CategoryTestClass(TestCase):
     # Set Up Method
@@ -58,7 +58,7 @@ class ImageTestCase(TestCase):
     
     def test_get_image_by_id(self):
         images = Image.get_image_by_id(self.image.id)
-        self.assertTrue(str(images)=='Lamborghini')
+        self.assertTrue(images == self.image)
 
     def test_search_image(self):
         images = Image.search_image('Sports')
