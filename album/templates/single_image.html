@@ -4,7 +4,7 @@
 <div class="container display-image">
     <div class="row">
         <div class="col-md-12 single-image">
-            <img src="{{image.image_url}}" alt="{{image.name}}">
+            <img src="{{image.image.cdn_url}}" alt="{{image.name}}">
         </div>
         <div class="col-md-12 single-text">
             <h3> {{image.name}} </h3>
@@ -19,7 +19,7 @@
                 {% for img in image_category %}
                 <div class="row">
                     <div class="col-md-8 category-images">
-                        <img src="{{img.image_url}}" alt="{{img.name}}">
+                        <img src="{{img.image.cdn_url}}" alt="{{img.name}}">
                     </div>
                     <div class="col-md-4 category-text">
                         <h4>{{img.name}}</h4>

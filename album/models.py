@@ -1,5 +1,6 @@
 from django.db import models
 import datetime as dt
+from pyuploadcare.dj.models import ImageField
 
 # Create your models here.
 class Location(models.Model):
@@ -11,10 +12,14 @@ class Location(models.Model):
     def delete_location(self):
         self.delete()
     
+    def update_location(self, update):
+        self.photo_location = update
+        self.save()
+    
     @classmethod
-    def update_location(cls,id, updates):
-        updated = Location.objects.filter(id=id).update(photo_location=updates)
-        return updated
+    def get_location_id(cls, id):
+        locate = Location.objects.get(pk = id)
+        return locate
 
     def __str__(self):
         return self.photo_location
@@ -28,17 +33,21 @@ class Category(models.Model):
     def delete_category(self):
         self.delete()
     
+    def update_category(self, update):
+        self.photo_category = update
+        self.save()
+
     @classmethod
-    def update_category(cls, id, updates):
-        updated = Category.objects.filter(pk=id).update(photo_category=updates)
-        return updated
+    def get_category_id(cls, id):
+        category = Category.objects.get(pk = id)
+        return category
 
     def __str__(self):
         return self.photo_category
 
 class Image(models.Model):
-    image = models.ImageField(upload_to = 'museum-Images/',default='Image')
-    image_url = models.CharField(max_length=200, default='https://auto.ferrari.com/en_EN/wp-content/uploads/sites/5/2014/06/ferrari-458-speciale-header-v4.jpg')
+    image = ImageField(blank=True, manual_crop='1920x1080')
+    # image_url = models.CharField(max_length=200, default='https://auto.ferrari.com/en_EN/wp-content/uploads/sites/5/2014/06/ferrari-458-speciale-header-v4.jpg')
     name = models.CharField(max_length=30)
     description = models.TextField()
     post_date = models.DateTimeField(auto_now_add=True)

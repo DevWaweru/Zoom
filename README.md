@@ -1,5 +1,5 @@
 # [Zoom](https://zoooom.herokuapp.com)
-## Simple photo gallery web application to showcase beautiful pictures and designs 
+### Simple photo gallery web application to showcase beautiful pictures and designs 
 ### June 8th, 2018
 #### By **[Richard Waweru](https://github.com/devwaweru)**
 

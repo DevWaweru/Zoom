@@ -8,10 +8,9 @@
             <p id="img-copy"></p>
             <div class="col-md-4 img-holder">
                 <div class="image-details">
-                    <p class="text-center"><a class="btn btn-outline-danger tool-tip"><span class="tip-text" id="tip">Copy Link</span><i class="fa fa-link fa-2x" aria-hidden="true"></i></a></p>
                     <p class="text-center"><a data-toggle="modal" data-target="#{{img.id}}">{{img.name}}</a></p>
                 </div>
-                <img src="{{img.image_url}}" alt="{{img.name}}">
+                <img src="{{img.image.cdn_url}}" alt="{{img.name}}">
             </div>
         {% empty %}
         <div class="container">
@@ -37,7 +36,7 @@
                 <div class="row">
                     <div class="col-md-12 modal-image">
                         <a href="/image/{{img.category.photo_category}}/{{img.id}}">
-                            <img src="{{img.image_url}}" alt="{{img.name}}">
+                            <img src="{{img.image.cdn_url}}" alt="{{img.name}}">
                         </a>
                     </div>
                     <div class="col-md-12 modal-text">

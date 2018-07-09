@@ -18,12 +18,17 @@ DEBUG = config('DEBUG', default=False, cast=bool)
 
 ALLOWED_HOSTS = ['*']
 
+UPLOADCARE = {
+    'pub_key': config('pub_key'),
+    'secret': config('secret'),
+}
 
 # Application definition
 
 INSTALLED_APPS = [
     'album.apps.AlbumConfig',
     'bootstrap4',
+    'pyuploadcare.dj',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

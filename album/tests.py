@@ -11,13 +11,14 @@ class LocationTestClass(TestCase):
     def test_instance(self):
         self.assertTrue(isinstance(self.nairobi,Location))
     
+    def test_updating_location(self):
+        location = Location.get_location_id(self.nairobi.id)
+        location.update_location('Kitengela')
+        location = Location.get_location_id(self.nairobi.id)
+        self.assertTrue(location.photo_location == 'Kitengela')
+    
     def tearDown(self):
         self.nairobi.delete_location()
-    
-    def test_updating_location(self):
-        self.nairobi.update_location(self.nairobi.id, 'Kitengela')
-        print(self.nairobi.photo_location)
-        self.assertTrue(self.nairobi.photo_location == self.nairobi)
     
 class CategoryTestClass(TestCase):
     # Set Up Method
@@ -32,8 +33,10 @@ class CategoryTestClass(TestCase):
         self.sports.delete_category()
     
     def test_updating_category(self):
-        self.sports.update_category(self.sports.id, 'Utility')
-        self.assertTrue(self.sports.photo_category != 'Utility')
+        category = Category.get_category_id(self.sports.id)
+        category.update_category('SUV')
+        category = Category.get_category_id(self.sports.id)
+        self.assertTrue(category.photo_category == 'SUV')
     
 class ImageTestCase(TestCase):
     # Set Up Method
