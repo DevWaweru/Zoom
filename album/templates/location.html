@@ -4,8 +4,7 @@
 {{block.super}}
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-12 home-images">
-            {% for img in images %}
+        {% for img in images %}
             <p id="img-copy"></p>
             <div class="col-md-4 img-holder">
                 <div class="image-details">
@@ -13,20 +12,19 @@
                 </div>
                 <img src="{{img.image.cdn_url}}" alt="{{img.name}}">
             </div>
-            {% empty %}
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <img src="/static/img/404.jpeg" alt="Loading Image">
-                    </div>
-                    <div class="col-md-6">
-                        <h4>Awww...Don’t Cry.</h4>
-                        <p>Images are coming up soon</p>
-                    </div>
+        {% empty %}
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="/static/img/404.jpeg" alt="Loading Image">
+                </div>
+                <div class="col-md-6">
+                    <h4>Awww...Don’t Cry.</h4>
+                    <p>Images are coming up soon</p>
                 </div>
             </div>
-            {% endfor %}
         </div>
+        {% endfor %}
     </div>
 </div>
 
