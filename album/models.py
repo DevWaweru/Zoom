@@ -54,6 +54,9 @@ class Image(models.Model):
     location = models.ForeignKey(Location)
     category = models.ForeignKey(Category)
 
+    class Meta:
+        ordering = ('-id',)
+
     def save_image(self):
         self.save()
     
