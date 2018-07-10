@@ -106,14 +106,13 @@ body {
 
 @media (min-width: 992px) {
     #navMain {
-        padding-top: 20px;
-        padding-bottom: 20px;
+        padding-top: 15px;
+        padding-bottom: 15px;
         -webkit-transition: padding-top 0.5s ease-in-out, padding-bottom 0.5s;
         -moz-transition: padding-top 0.5s ease-in-out, padding-bottom 0.5s;
         transition: padding-top 0.5s ease-in-out, padding-bottom 0.5s;
         letter-spacing: 1px;
         background: #222;
-        height: 70px;
     }
     #navMain .nav-link.active {
         outline: none;
